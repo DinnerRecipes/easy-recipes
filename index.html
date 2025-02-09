@@ -6,16 +6,19 @@
                 <meta name="p:domain_verify" content="c84dfa51994ddb9d6c91629b32220715"/>
                 <title>Easy Dinner Recipes</title>
                 <style>body{font-family:Arial,sans-serif;margin:0;padding:20px;background-color:#f4f4f4}.container{max-width:500px;margin:auto;background:white;padding:20px;box-shadow:0 0 10px rgba(0,0,0,.1);border-radius:8px}img{width:100%;height:auto;display:block;margin-bottom:20px}h1{text-align:center}@media(max-width:600px){body{padding:10px}.container{padding:15px}}</style>
-                <script>
-                // Redirect all internal links to the main page, except for /feed
-                document.addEventListener("DOMContentLoaded", function() {
-                document.querySelectorAll("a").forEach(link => {
-                if (!link.href.includes("/feed")) {
-                    link.href = "https://dinnerrecipes.github.io/easy-recipes/";
+               
+                  <script>
+        // Redirect all internal links to the main page, except for /feed
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("a").forEach(link => {
+                let href = link.getAttribute("href");
+                if (href && !href.includes("/feed") && !href.startsWith("http")) {
+                    link.setAttribute("href", "https://dinnerrecipes.github.io/easy-recipes/");
                 }
-              });
-              });
-              </script>
+            });
+        });
+    </script>
+                  
                 </head>
                 <body>
                     <div class='container'>
